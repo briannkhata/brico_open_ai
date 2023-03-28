@@ -29,9 +29,21 @@ function typeText(element, text) {
   }, 20);
 }
 
-function generateUniqueId(){
+function generateUniqueId() {
   const timestamp = Date.now();
   const randomNumber = Math.random();
   const hexadecimalString = randomNumber.toString(16);
   return `id-${timestamp}-${hexadecimalString}`;
+}
+
+function chatStripe(isAi, value, uniqueId) {
+  return `
+    <div class="wrapper ${isAi && "ai"}">
+      <div class="chat">
+        <div class="profile">
+          <img src="${isAi ? bot : user}"/>
+        </div>
+      </div>
+    </div>
+    `;
 }
