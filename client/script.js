@@ -12,7 +12,7 @@ function loader(element) {
   loadInterval = setInterval(() => {
     element.textContent += ".";
     if (element.textContent === "...") {
-      element.textContent = ";";
+      element.textContent = "";
     }
   }, 300);
 }
@@ -56,7 +56,7 @@ const handleSubmit = async (e) => {
   e.preventDefault();
 
   const data = new FormData(form);
-  chatContainer.innerHTML += chatStripe(false, data.get("propmpt"));
+  chatContainer.innerHTML += chatStripe(false, data.get("prompt"));
   form.reset();
 
   //chat stripe
